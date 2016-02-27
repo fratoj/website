@@ -1,8 +1,17 @@
-<nav class="navbar">
-	<div class="logo">
-		<h1><a ui-sref="home">{{ vm.name }}</a></h1>
-	</div>
-	<div class="nav-links">
-		<span><a ui-sref="about">about</a></span>
-	</div>
-</nav>
+  <div id="header-wrapper">
+    <div id="header" class="container">
+      <div id="logo">
+        <h1><a href="#">Fratoj</a></h1>
+        <span>The botherhood of <a href="#" rel="nofollow">CODE</a></span>
+      </div>
+      <div id="menu">
+        <ul>
+          <li class="current_page_item"><a ui-sref="home" accesskey="1" title="{{ vm.name }}">{{ vm.name }}</a></li>
+          <li><a href="#" accesskey="2" title="">Our Clients</a></li>
+          <li><a ui-sref="about" accesskey="3" title="">About Us</a></li>
+          <li><a href="#" accesskey="4" title="">Careers</a></li>
+          <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
