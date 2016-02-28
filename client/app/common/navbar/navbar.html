@@ -1,17 +1,7 @@
-  <div id="header-wrapper">
-    <div id="header" class="container">
-      <div id="logo">
-        <h1><a href="#">Fratoj</a></h1>
-        <span>The botherhood of <a href="#" rel="nofollow">CODE</a></span>
-      </div>
       <div id="menu">
         <ul>
-          <li class="current_page_item"><a ui-sref="home" accesskey="1" title="{{ vm.name }}">{{ vm.name }}</a></li>
-          <li><a href="#" accesskey="2" title="">Our Clients</a></li>
-          <li><a ui-sref="about" accesskey="3" title="">About Us</a></li>
-          <li><a href="#" accesskey="4" title="">Careers</a></li>
-          <li><a href="#" accesskey="5" title="">Contact Us</a></li>
+          <li ui-sref-active="current_page_item" ng-repeat="state in vm.states">
+            <a ui-sref="{{ state.name }}" accesskey="1" title="{{ state.name }}">{{ state.data.displayname || state.name }}</a>
+          </li>
         </ul>
       </div>
-    </div>
-  </div>

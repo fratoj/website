@@ -11,7 +11,10 @@ let homeModule = angular.module('home', [
 	$stateProvider
 		.state('home', {
 			url: '/',
-			template: '<home></home>'
+			template: '<home></home>',
+      data: {
+        displayname: 'Homepage'
+      }
 		});
 })
 .directive('home', homeComponent);
