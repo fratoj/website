@@ -22,3 +22,65 @@
 .hero * {
   color: #F5F5F5; /* lightTextColor */
 }
+code {
+  font-size: 1.2em;
+}
+
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+.splash-container {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em;
+  padding-top: 100px;
+  background: #261300 url(/app/common/images/overlay.png) repeat;
+  z-index: 1;
+  overflow: hidden;
+  /* The following styles are required for the "scroll-over" effect */
+  width: 100%;
+  height: 88%;
+  top: 0;
+  left: 0;
+  position: fixed !important;
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    /* position: absolute; *?
+    /* top: 100px; */
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+  .splash h1 {
+    margin: 0.3em;
+  }
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+  color: white;
+  font-size: 3.5em;
+}
+  .splash-head h1 {
+    margin: 0.3em 0;
+  }
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-size: 0.60em;
+  color: rgba(255,255,255,0.5);
+    opacity: 0.8;
+}
+
+.splash-subhead code {
+  color: rgba(255,255,255,0.8);
+}
