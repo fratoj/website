@@ -1,0 +1,9 @@
+footer {
+  background: #261300 url(/app/common/images/overlay.png) repeat;
+}
+.footer, .footer a {
+  color: white;
+  text-decoration: none;
+  font-style: oblique;
+  font-weight: 100;
+}
