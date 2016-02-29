@@ -52,6 +52,23 @@ gulp.task('serve', function(){
 				'/jspm_packages': './jspm_packages'
 			}
 		},
+		notify: {
+  	  styles:  [
+        "display: none",
+        "padding: 15px",
+        "font-family: sans-serif",
+        "position: fixed",
+        "font-size: 0.9em",
+        "z-index: 9999",
+        "top: 0px",
+        "left: 0px",
+        "border-bottom-right-radius: 5px",
+        "background-color: rgba(0,0,0,0.5)",
+        "margin: 0",
+        "color: white",
+        "text-align: center"
+	    ]
+		}
 	});
 });
 
