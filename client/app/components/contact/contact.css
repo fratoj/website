@@ -1,0 +1,14 @@
+.contact {
+	color: red;
+}
+form {
+  position: relative;
+
+  width  : 740px;
+  height : 498px;
+  margin : 0 auto;
+
+}
+.row {
+  // position: absolute;
+}
