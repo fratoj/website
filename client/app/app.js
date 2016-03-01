@@ -1,7 +1,10 @@
+import 'font-awesome';
+
 import angular from 'angular';
 import 'angular-ui-router';
-import firebase from 'firebase';
-import angularfire from 'angularfire';
+import 'firebase';
+import 'angularfire';
+
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
