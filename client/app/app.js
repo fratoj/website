@@ -1,11 +1,14 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import firebase from 'firebase';
+import angularfire from 'angularfire';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 
 let appModule = angular.module('app', [
 	'ui.router',
+	'firebase',
 	Common.name,
 	Components.name
 ])

@@ -16,11 +16,13 @@ System.config({
     "angular": "github:angular/bower-angular@1.4.0",
     "angular-mocks": "npm:angular-mocks@1.4.0",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
+    "angularfire": "github:firebase/angularfire@1.1.4",
     "babel": "npm:babel-core@5.8.25",
     "babel-runtime": "npm:babel-runtime@5.8.25",
     "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.0",
     "core-js": "npm:core-js@1.2.1",
     "css": "github:systemjs/plugin-css@0.1.12",
+    "firebase": "github:firebase/firebase-bower@2.4.1",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.0"
