@@ -21,7 +21,6 @@ System.config({
     "capaj/systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@0.5.0",
     "core-js": "npm:core-js@1.2.1",
     "css": "github:systemjs/plugin-css@0.1.12",
-    "normalize.css": "github:necolas/normalize.css@3.0.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.15": {
       "angular": "github:angular/bower-angular@1.4.0"
@@ -96,9 +95,6 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
-    },
-    "github:necolas/normalize.css@3.0.3": {
-      "css": "github:systemjs/plugin-css@0.1.12"
     },
     "github:systemjs/plugin-css@0.1.12": {
       "clean-css": "npm:clean-css@3.1.9",
