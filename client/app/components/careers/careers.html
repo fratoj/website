@@ -1,18 +1,26 @@
 <header></header>
 
 <div class="ribbon l-box-lrg pure-g about">
-    <div class="pure-u-1">
-        <h2 class="content-head content-head-ribbon is-center">
-            Want a career
-        </h2>
-    </div>
-    <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-        <img class="pure-img-responsive" alt="Being a brother beats being a superhero" width="300" src="app/common/images/careers.png"/>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-      <h3>We have none yet</h3>
-      <p>Coming soon</p>
-    </div>
+  <div class="pure-u-1">
+    <h2 class="content-head content-head-ribbon is-center">
+      Want a career
+    </h2>
+  </div>
+  <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+    <img class="pure-img-responsive" alt="Being a brother beats being a superhero" width="300" src="app/common/images/careers.png"/>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+    <h3 ng-if="!vm.jobs">We have none yet</h3>
+    <ul>
+    <li ng-repeat="job in vm.jobs" class="job-list">
+      <span class="job-item">
+      <h3>{{ job.title }}</h3>
+      {{ job.text }}
+      </span>
+    </li>
+  </ul>
+
+  </div>
 </div>
 <footer>
 </footer>
