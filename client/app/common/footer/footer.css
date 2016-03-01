@@ -1,9 +1,14 @@
 footer {
   background: #261300 url(/app/common/images/overlay.png) repeat;
 }
-.footer, .footer a {
-  color: white;
-  text-decoration: none;
-  font-style: oblique;
-  font-weight: 100;
+.copyright {
+  letter-spacing: 0.20em;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.80em;
+  color: rgba(255,255,255,0.3);
 }
+  .copyright a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+  }
