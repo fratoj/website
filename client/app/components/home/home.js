@@ -13,7 +13,8 @@ let homeModule = angular.module('home', [
 			url: '/',
 			template: '<home></home>',
       data: {
-        displayname: 'Homepage'
+        displayname: 'Homepage',
+        showinnav: false
       }
 		});
 })

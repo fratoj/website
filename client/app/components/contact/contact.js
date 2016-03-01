@@ -11,7 +11,8 @@ let contactModule = angular.module('contact', [
       url: '/contact',
       template: '<contact></contact>',
       data: {
-        displayname: 'Contact'
+        displayname: 'Contact',
+        showinnav: true
       }
     });
 })

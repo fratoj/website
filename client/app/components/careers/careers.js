@@ -11,7 +11,8 @@ let careersModule = angular.module('careers', [
       url: '/careers',
       template: '<careers></careers>',
       data: {
-        displayname: 'Careers'
+        displayname: 'Careers',
+        showinnav: true
       }
     });
 })

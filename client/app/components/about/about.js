@@ -11,7 +11,8 @@ let aboutModule = angular.module('about', [
 			url: '/about',
 			template: '<about></about>',
       data: {
-        displayname: 'About us'
+        displayname: 'About us',
+        showinnav: true
       }
 		});
 })

@@ -11,7 +11,8 @@ let clientsModule = angular.module('clients', [
       url: '/clients',
       template: '<clients></clients>',
       data: {
-        displayname: 'Our clients'
+        displayname: 'Our clients',
+        showinnav: true
       }
     });
 })

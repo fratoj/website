@@ -8,35 +8,24 @@
  */
 
 .home-menu {
-    padding: 0.5em;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+  padding: 0.5em;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-    background: #261300 url(/app/common/images/overlay.png) repeat;
+  background: #261300 url(/app/common/images/overlay.png) repeat;
 }
 .pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
-    border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
-    z-index: 4;
+  /* Fixed menus normally have a border at the bottom. */
+  border-bottom: none;
+  /* I need a higher z-index here because of the scroll-over effect. */
+  z-index: 4;
 }
-
-.home-menu .pure-menu-heading {
-    color: white;
-    font-weight: 400;
-    font-size: 120%;
-}
-
-.home-menu .pure-menu-selected a {
-    color: white;
-}
-
 .home-menu a {
-    color: white;
+  color: white !important;
 }
-.home-menu li a:hover,
-.home-menu li a:focus {
+  .home-menu li a:hover,
+  .home-menu li a:focus {
     border: none;
-  background: #BF1E4B;
-}
+    background: #BF1E4B;
+  }
