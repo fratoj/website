@@ -84,3 +84,10 @@ code {
 .splash-subhead code {
   color: rgba(255,255,255,0.8);
 }
+
+.spash-shrunk {
+  padding-top: 0px;
+  z-index: 999;
+  height: 88px;
+  font-size: 1.1em;
+}
