@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>HelloAngular</title>
+    <title><%= gettext "Welcome to %{name}!", name: "Fratoj" %></title>
     <base href="/">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
