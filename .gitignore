@@ -3,6 +3,7 @@
 /node_modules
 /db
 /deps
+/.env
 /*.ez
 /*.swp
 
