@@ -42,7 +42,8 @@ defmodule Blog.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ueberauth, "~> 0.4"},
-      {:ueberauth_google, "~> 0.5"}
+      {:ueberauth_google, "~> 0.5"},
+      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
     ]
   end
 
