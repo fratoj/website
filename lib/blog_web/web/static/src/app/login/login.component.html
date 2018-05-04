@@ -1,0 +1,6 @@
+<span *ngIf="user_id">
+  <button (click)="logout()">Sign out</button>
+</span>
+<span *ngIf="!user_id">
+  <button (click)="login()">Sign in with Google</button>
+</span>

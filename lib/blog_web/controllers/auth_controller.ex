@@ -43,4 +43,17 @@ defmodule BlogWeb.AuthController do
         {:ok, user}
     end
   end
+
+  def delete(conn, _params) do
+    conn
+    |> configure_session(drop: true)
+    |> redirect(to: page_path(conn, :index))
+  end
+
+  def get_user_session_data(conn, _params) do
+    conn = fetch_session(conn)
+
+    user = get_session(conn, :user_id)
+    json(conn, %{user: user})
+  end
 end

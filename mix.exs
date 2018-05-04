@@ -43,7 +43,8 @@ defmodule Blog.Mixfile do
       {:cowboy, "~> 1.0"},
       {:ueberauth, "~> 0.4"},
       {:ueberauth_google, "~> 0.5"},
-      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
+      {:ex_machina, "~> 2.0", only: :test}
     ]
   end
 
