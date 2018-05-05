@@ -17,6 +17,6 @@ defmodule Blog.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:first_name, :last_name, :email, :provider, :token, :is_active])
-    |> validate_required([:first_name, :last_name, :email, :provider, :token])
+    |> validate_required([:first_name, :last_name, :email])
   end
 end
