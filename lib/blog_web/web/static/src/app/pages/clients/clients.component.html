@@ -1,0 +1,16 @@
+<h2 class="content-head">Our clients</h2>
+<div class="content-block">
+    <div class="content-image">
+        <img alt="Our clients are devoted" src="js/assets/clients.png" />
+    </div>
+    <div class="content-item">
+        <ul>
+            <li *ngFor="let client of clients">
+                <div *ngIf="client.active">
+                    <h3>{{ client.name }}</h3>
+                    {{ client.bio }}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

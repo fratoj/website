@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 7%;
+    .copyright {
+        letter-spacing: 0.20em;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.80em;
+        color: rgba(255, 255, 255, 0.3);
+    }
+    .copyright a {
+        font-size: 1.2em;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.6);
+    }
+}
