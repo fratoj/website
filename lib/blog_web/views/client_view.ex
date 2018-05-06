@@ -11,9 +11,6 @@ defmodule BlogWeb.ClientView do
   end
 
   def render("client.json", %{client: client}) do
-    %{id: client.id,
-      name: client.name,
-      description: client.description,
-      url: client.url}
+    %{id: client.id, name: client.name, bio: client.bio, url: client.url, active: client.active}
   end
 end

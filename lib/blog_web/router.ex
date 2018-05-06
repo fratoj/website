@@ -34,5 +34,6 @@ defmodule BlogWeb.Router do
     pipe_through(:api)
     get("/userdata", AuthController, :get_user_session_data)
     resources("/clients", ClientController)
+    resources("/careers", CareerController)
   end
 end

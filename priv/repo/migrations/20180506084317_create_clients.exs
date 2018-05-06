@@ -4,7 +4,7 @@ defmodule Blog.Repo.Migrations.CreateClients do
   def change do
     create table(:clients) do
       add(:name, :string)
-      add(:bio, :string)
+      add(:bio, :text)
       add(:url, :string)
       add(:active, :boolean)
 
