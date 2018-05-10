@@ -1,0 +1,18 @@
+<h2 class="content-head">Our blog</h2>
+<div class="content-block">
+    <div class="content-image">
+        <img alt="Our blogposts are devoted" src="js/assets/typewriter.jpg" />
+    </div>
+    <div class="content-item">
+        <ul>
+            <li *ngFor="let blogpost of blogposts">
+                <div *ngIf="blogpost.published">
+                    <h3>{{ blogpost.title }}</h3>
+                    <span>{{ blogpost.description }}</span>
+                    <div class="slug">{{ blogpost.slug }}</div>
+                    <a href="/blog/{{blogpost.id}}">Read more...</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

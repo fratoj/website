@@ -14,6 +14,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { BlogModule } from './blog/blog.module';
+import { PostComponent } from './blog/post/post.component';
 
 const appRoutes: Routes = [
   {
@@ -42,6 +44,11 @@ const appRoutes: Routes = [
     data: { title: 'Contact' }
   },
   {
+    path: 'blog',
+    component: PostComponent,
+    data: { title: 'Blog' }
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -61,6 +68,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     PagesModule,
+    BlogModule,
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
