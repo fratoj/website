@@ -1,6 +1,2 @@
-<span *ngIf="user_id">
-  <button (click)="logout()">Sign out</button>
-</span>
-<span *ngIf="!user_id">
-  <button (click)="login()">Sign in with Google</button>
-</span>
+<a href="/auth/signout" *ngIf="user_id">Sign out</a>
+<a href="/auth/google?scope=email profile" *ngIf="!user_id">Sign in</a>

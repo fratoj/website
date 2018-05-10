@@ -1,0 +1,10 @@
+@import "~colors.scss";
+:host {
+    a {
+        color: $lightText;
+    }
+}
+
+.active {
+    background: $contentBg;
+}
