@@ -1,4 +1,6 @@
 defmodule Blog.SiteContent do
+  require Logger
+
   @moduledoc """
   The SiteContent context.
   """
@@ -196,5 +198,109 @@ defmodule Blog.SiteContent do
   """
   def change_career(%Career{} = career) do
     Career.changeset(career, %{})
+  end
+
+  alias Blog.SiteContent.Blogpost
+
+  @doc """
+  Returns the list of blogposts.
+
+  ## Examples
+
+      iex> list_blogposts()
+      [%Blogpost{}, ...]
+
+  """
+  def list_blogposts do
+    Blogpost
+    |> Repo.all()
+    |> Repo.preload(:user)
+  end
+
+  @doc """
+  Gets a single blogpost.
+
+  Raises `Ecto.NoResultsError` if the Blogpost does not exist.
+
+  ## Examples
+
+      iex> get_blogpost!(123)
+      %Blogpost{}
+
+      iex> get_blogpost!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_blogpost!(id) do
+    Blogpost
+    |> Repo.get!(id)
+    |> Repo.preload(:user)
+  end
+
+  @doc """
+  Creates a blogpost.
+
+  ## Examples
+
+      iex> create_blogpost(%{field: value})
+      {:ok, %Blogpost{}}
+
+      iex> create_blogpost(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_blogpost(attrs \\ %{}) do
+    # |> Ecto.Changeset.cast_assoc(:user, with: &Blogpost.changeset/2)
+    %Blogpost{}
+    |> Blogpost.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a blogpost.
+
+  ## Examples
+
+      iex> update_blogpost(blogpost, %{field: new_value})
+      {:ok, %Blogpost{}}
+
+      iex> update_blogpost(blogpost, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_blogpost(%Blogpost{} = blogpost, attrs) do
+    blogpost
+    |> Blogpost.changeset(attrs)
+    |> Ecto.Changeset.cast_assoc(:user, with: &Blogpost.changeset/2)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a Blogpost.
+
+  ## Examples
+
+      iex> delete_blogpost(blogpost)
+      {:ok, %Blogpost{}}
+
+      iex> delete_blogpost(blogpost)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_blogpost(%Blogpost{} = blogpost) do
+    Repo.delete(blogpost)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking blogpost changes.
+
+  ## Examples
+
+      iex> change_blogpost(blogpost)
+      %Ecto.Changeset{source: %Blogpost{}}
+
+  """
+  def change_blogpost(%Blogpost{} = blogpost) do
+    Blogpost.changeset(blogpost, %{})
   end
 end

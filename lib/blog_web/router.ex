@@ -33,7 +33,10 @@ defmodule BlogWeb.Router do
   scope "/api", BlogWeb do
     pipe_through(:api)
     get("/userdata", AuthController, :get_user_session_data)
+    # get("/users", AuthController, :index)
+    resources("/users", AuthController, only: [:index, :show])
     resources("/clients", ClientController)
     resources("/careers", CareerController)
+    resources("/blogposts", BlogpostController)
   end
 end

@@ -7,6 +7,9 @@ defmodule Blog.Auth do
   alias Blog.Repo
 
   alias Blog.User
+  # alias Blog.SiteContent.Blogpost
+
+  # TODO: preload blogposts on user(s)
 
   @doc """
   Returns the list of users.
@@ -18,7 +21,19 @@ defmodule Blog.Auth do
 
   """
   def list_users do
-    Repo.all(User)
+    # preload_blogposts_query =
+    #   from(
+    #     b in Blogpost,
+    #     where: b.user_id == ^user.id,
+    #     select: b.id
+    #   )
+
+    User
+    |> Repo.all()
+
+    # |> Repo.preload(:blogposts)
+
+    # Repo.all(User)
   end
 
   @doc """
@@ -35,7 +50,12 @@ defmodule Blog.Auth do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id) do
+    User
+    |> Repo.get(id)
+
+    # |> Repo.preload(:blogposts)
+  end
 
   @doc """
   Creates a user.

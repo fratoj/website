@@ -68,3 +68,29 @@ Repo.insert!(%Client{
   active: true,
   url: "https://www.skateshopwest50.com/"
 })
+
+alias Blog.User
+
+Repo.insert!(%User{
+  email: "Joe.Something@example.com",
+  first_name: "Joe",
+  last_name: "Something",
+  provider: "google",
+  token: "wi4utpqvbw4otvbqpeughvbqeuilvwiuhbqvo4ty387w4",
+  is_active: true
+})
+
+alias Blog.SiteContent.Blogpost
+
+Repo.insert!(%Blogpost{
+  title: "qui sint ratione",
+  description: "Est fuga saepe quia culpa eos.",
+  slug:
+    "Id alias asperiores nihil dicta odio sed reiciendis. Occaecati culpa et. Sequi optio sed eveniet. Omnis sint dolor totam hic voluptatem voluptas inventore asperiores repudiandae. Necessitatibus quibusdam quia voluptatem ducimus est vero magni. Aut rerum quo facere modi.",
+  text:
+    "At enim commodi ea ut a deserunt dolor. Nemo quia pariatur quasi ut voluptatem. Nisi nulla omnis dolorem omnis iste ipsum nesciunt dicta quibusdam. Earum est dolor ullam deserunt id vel ut illum laboriosam. Provident facilis ut consequatur. Officia autem sed fuga fugit quo omnis nihil quisquam beatae.
+    Eaque enim autem cumque provident unde repellat sit minus vero. Voluptate quia perspiciatis sequi voluptatem assumenda qui quis aut. Rerum esse laboriosam animi. Necessitatibus quidem laudantium maiores beatae.
+    Quae aut illo consectetur. Dolor amet ut ducimus perferendis enim eveniet ullam voluptatum. Labore ea et. Laudantium libero aspernatur voluptatem qui nihil nihil fugiat aut nostrum. Rerum incidunt harum molestiae. Aliquam voluptatibus rerum.",
+  published: true,
+  user_id: 1
+})

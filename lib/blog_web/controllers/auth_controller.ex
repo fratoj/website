@@ -5,6 +5,19 @@ defmodule BlogWeb.AuthController do
 
   alias Blog.User
   alias Blog.Repo
+  alias Blog.Auth
+
+  def index(conn, _params) do
+    users = Auth.list_users()
+    render(conn, "index.json", users: users)
+    # json(conn, users: users)
+  end
+
+  def show(conn, %{"id" => id}) do
+    user = Auth.get_user!(id)
+    render(conn, "show.json", user: user)
+    # json(conn, user: user)
+  end
 
   def new(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     user_params = %{

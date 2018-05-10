@@ -1,6 +1,7 @@
 defmodule Blog.User do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Blog.SiteContent.Blogpost
 
   schema "users" do
     field(:email, :string)
@@ -9,6 +10,7 @@ defmodule Blog.User do
     field(:provider, :string)
     field(:token, :string)
     field(:is_active, :boolean)
+    has_many(:blogposts, Blogpost)
 
     timestamps()
   end
