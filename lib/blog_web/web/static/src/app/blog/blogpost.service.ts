@@ -24,6 +24,15 @@ export class BlogpostService {
       }).catch(this.handleError);
   }
 
+  public getBlogpost(id: number): Observable<Blogpost> {
+    return this.http
+      .get(API_URL + '/blogposts/' + id)
+      .map(response => {
+        const blogpost = response.json().data;
+        return new Blogpost(blogpost);
+      }).catch(this.handleError);
+  }
+
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);

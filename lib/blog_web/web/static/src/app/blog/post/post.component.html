@@ -10,7 +10,7 @@
                     <h3>{{ blogpost.title }}</h3>
                     <span>{{ blogpost.description }}</span>
                     <div class="slug">{{ blogpost.slug }}</div>
-                    <a href="/blog/{{blogpost.id}}">Read more...</a>
+                    <a [routerLink]="[blogpost.id]">Read more ...</a>
                 </div>
             </li>
         </ul>

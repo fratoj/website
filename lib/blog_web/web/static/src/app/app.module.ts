@@ -16,6 +16,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BlogModule } from './blog/blog.module';
 import { PostComponent } from './blog/post/post.component';
+import { PostDetailComponent } from './blog/post-detail/post-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -42,6 +43,10 @@ const appRoutes: Routes = [
     path: 'contact',
     component: ContactComponent,
     data: { title: 'Contact' }
+  },
+  {
+    path: 'blog/:id',
+    component: PostDetailComponent
   },
   {
     path: 'blog',
