@@ -14,13 +14,6 @@ defmodule BlogWeb.Router do
     plug(:accepts, ["json"])
   end
 
-  scope "/", BlogWeb do
-    # Use the default browser stack
-    pipe_through(:browser)
-
-    get("/", PageController, :index)
-  end
-
   scope "/auth", BlogWeb do
     pipe_through(:browser)
 
@@ -38,5 +31,13 @@ defmodule BlogWeb.Router do
     resources("/clients", ClientController)
     resources("/careers", CareerController)
     resources("/blogposts", BlogpostController)
+  end
+
+  scope "/", BlogWeb do
+    # Use the default browser stack
+    pipe_through(:browser)
+
+    get("/", PageController, :index)
+    get("/*path", PageController, :index)
   end
 end
