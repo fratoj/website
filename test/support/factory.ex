@@ -4,7 +4,7 @@ defmodule Blog.Factory do
   def user_factory do
     %Blog.User{
       token: "ffnebyt73bich9",
-      email: "batman@example.com",
+      email: sequence(:email, &"email-#{&1}@example.com"),
       first_name: "Bruce",
       last_name: "Wayne",
       provider: "google"
