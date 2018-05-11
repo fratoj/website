@@ -6,9 +6,14 @@ defmodule Blog.SiteContentTest do
   describe "clients" do
     alias Blog.SiteContent.Client
 
-    @valid_attrs %{bio: "some bio", name: "some name", url: "some url" active: true}
-    @update_attrs %{bio: "some updated bio", name: "some updated name", url: "some updated url" active: true}
-    @invalid_attrs %{bio: nil, name: nil, url: nil active: true}
+    @valid_attrs %{bio: "some bio", name: "some name", url: "some url", active: true}
+    @update_attrs %{
+      bio: "some updated bio",
+      name: "some updated name",
+      url: "some updated url",
+      active: true
+    }
+    @invalid_attrs %{bio: nil, name: nil, url: nil, active: true}
 
     def client_fixture(attrs \\ %{}) do
       {:ok, client} =
