@@ -3,10 +3,40 @@ defmodule BlogWeb.BlogpostControllerTest do
 
   alias Blog.SiteContent
   alias Blog.SiteContent.Blogpost
+  alias Blog.Repo
+  alias Blog.User
 
-  @create_attrs %{description: "some description", published: true, slug: "some slug", text: "some text", title: "some title"}
-  @update_attrs %{description: "some updated description", published: false, slug: "some updated slug", text: "some updated text", title: "some updated title"}
-  @invalid_attrs %{description: nil, published: nil, slug: nil, text: nil, title: nil}
+  setup do
+    Repo.insert!(%User{
+      id: 1,
+      email: "jos@topper.com",
+      is_active: true,
+      first_name: "Jos",
+      last_name: "Topper",
+      provider: "google",
+      token: "ya29.GluwBUYLWn22FDxVPhYKpOaq"
+    })
+
+    :ok
+  end
+
+  @create_attrs %{
+    description: "some description",
+    published: true,
+    slug: "some slug",
+    text: "some text",
+    title: "some title",
+    user_id: 1
+  }
+  @update_attrs %{
+    description: "some updated description",
+    published: false,
+    slug: "some updated slug",
+    text: "some updated text",
+    title: "some updated title",
+    user_id: 1
+  }
+  @invalid_attrs %{description: nil, published: nil, slug: nil, text: nil, title: nil, user_id: 1}
 
   def fixture(:blogpost) do
     {:ok, blogpost} = SiteContent.create_blogpost(@create_attrs)
@@ -19,28 +49,31 @@ defmodule BlogWeb.BlogpostControllerTest do
 
   describe "index" do
     test "lists all blogposts", %{conn: conn} do
-      conn = get conn, blogpost_path(conn, :index)
+      conn = get(conn, blogpost_path(conn, :index))
       assert json_response(conn, 200)["data"] == []
     end
   end
 
   describe "create blogpost" do
     test "renders blogpost when data is valid", %{conn: conn} do
-      conn = post conn, blogpost_path(conn, :create), blogpost: @create_attrs
+      conn = post(conn, blogpost_path(conn, :create), blogpost: @create_attrs)
       assert %{"id" => id} = json_response(conn, 201)["data"]
 
-      conn = get conn, blogpost_path(conn, :show, id)
+      conn = get(conn, blogpost_path(conn, :show, id))
+
       assert json_response(conn, 200)["data"] == %{
-        "id" => id,
-        "description" => "some description",
-        "published" => true,
-        "slug" => "some slug",
-        "text" => "some text",
-        "title" => "some title"}
+               "id" => id,
+               "description" => "some description",
+               "published" => true,
+               "slug" => "some slug",
+               "text" => "some text",
+               "title" => "some title",
+               "user_id" => 1
+             }
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
-      conn = post conn, blogpost_path(conn, :create), blogpost: @invalid_attrs
+      conn = post(conn, blogpost_path(conn, :create), blogpost: @invalid_attrs)
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
@@ -48,22 +81,28 @@ defmodule BlogWeb.BlogpostControllerTest do
   describe "update blogpost" do
     setup [:create_blogpost]
 
-    test "renders blogpost when data is valid", %{conn: conn, blogpost: %Blogpost{id: id} = blogpost} do
-      conn = put conn, blogpost_path(conn, :update, blogpost), blogpost: @update_attrs
+    test "renders blogpost when data is valid", %{
+      conn: conn,
+      blogpost: %Blogpost{id: id} = blogpost
+    } do
+      conn = put(conn, blogpost_path(conn, :update, blogpost), blogpost: @update_attrs)
       assert %{"id" => ^id} = json_response(conn, 200)["data"]
 
-      conn = get conn, blogpost_path(conn, :show, id)
+      conn = get(conn, blogpost_path(conn, :show, id))
+
       assert json_response(conn, 200)["data"] == %{
-        "id" => id,
-        "description" => "some updated description",
-        "published" => false,
-        "slug" => "some updated slug",
-        "text" => "some updated text",
-        "title" => "some updated title"}
+               "id" => id,
+               "description" => "some updated description",
+               "published" => false,
+               "slug" => "some updated slug",
+               "text" => "some updated text",
+               "title" => "some updated title",
+               "user_id" => 1
+             }
     end
 
     test "renders errors when data is invalid", %{conn: conn, blogpost: blogpost} do
-      conn = put conn, blogpost_path(conn, :update, blogpost), blogpost: @invalid_attrs
+      conn = put(conn, blogpost_path(conn, :update, blogpost), blogpost: @invalid_attrs)
       assert json_response(conn, 422)["errors"] != %{}
     end
   end
@@ -72,11 +111,12 @@ defmodule BlogWeb.BlogpostControllerTest do
     setup [:create_blogpost]
 
     test "deletes chosen blogpost", %{conn: conn, blogpost: blogpost} do
-      conn = delete conn, blogpost_path(conn, :delete, blogpost)
+      conn = delete(conn, blogpost_path(conn, :delete, blogpost))
       assert response(conn, 204)
-      assert_error_sent 404, fn ->
-        get conn, blogpost_path(conn, :show, blogpost)
-      end
+
+      assert_error_sent(404, fn ->
+        get(conn, blogpost_path(conn, :show, blogpost))
+      end)
     end
   end
 

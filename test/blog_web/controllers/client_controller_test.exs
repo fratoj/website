@@ -64,7 +64,8 @@ defmodule BlogWeb.ClientControllerTest do
                "id" => id,
                "bio" => "some updated bio",
                "name" => "some updated name",
-               "url" => "some updated url"
+               "url" => "some updated url",
+               "active" => true
              }
     end
 
