@@ -1,0 +1,16 @@
+<h2 class="content-head">Looking for a job</h2>
+<div class="content-block">
+    <div class="content-image">
+        <img alt="All work and no play makes Jack a dull boy" src="js/assets/careers.png" />
+    </div>
+    <div class="content-item">
+        <ul>
+            <li *ngFor="let job of jobs">
+                <div *ngIf="job.active">
+                    <h3>{{ job.title }}</h3>
+                    {{ job.text }}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

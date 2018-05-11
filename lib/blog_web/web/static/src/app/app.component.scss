@@ -1,0 +1,21 @@
+@import "~colors.scss";
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background: $contentBg;
+    color: $darkText;
+    margin: 0 auto;
+}
+
+
+/*
+* -- TABLET (AND UP) --
+*/
+
+@media (min-width: 48em) {
+    .content {
+        height: 80%;
+    }
+}

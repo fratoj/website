@@ -1,0 +1,84 @@
+@import "~colors.scss";
+.content-head {
+    font-size: 2.8em;
+    color: $darkText;
+    padding-top: 1em;
+    text-align: center;
+    padding-bottom: 0.8em;
+}
+
+.content-block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .content-item {
+        padding-left: 10px;
+        padding-right: 10px;
+        flex: 1;
+        li {
+            list-style: none;
+            padding-bottom: 10px;
+            h3 {
+                padding-bottom: 10px;
+                color: $lightText;
+                zoom: 1;
+            }
+            span {
+                background-color: aliceblue
+            }
+            .slug {
+                line-height: 1.5em;
+                height: 3em;
+                width: 100%;
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+            }
+        }
+    }
+    .content-image {
+        color: $darkText;
+        padding-left: 10px;
+        img {
+            // width: 70%;
+            width: 300px;
+            // height: 300px;
+            &:after {
+                content: "";
+                // display: block;
+                padding-bottom: 100%;
+            }
+        }
+    }
+}
+
+
+/*
+* -- TABLET (AND UP) --
+*/
+
+@media (min-width: 48em) {
+    .content-block {
+        flex-direction: row;
+        .content-image {
+            padding: 4px 100px;
+        }
+        .content-item {
+            flex-basis: 50%;
+        }
+    }
+}
+
+
+/*
+* -- DESKTOP (AND UP) --
+*/
+
+@media (min-width: 78em) {
+    .content-block {
+        .content-item {
+            flex-basis: 25%;
+        }
+    }
+}

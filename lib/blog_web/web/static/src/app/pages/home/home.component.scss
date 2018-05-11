@@ -1,0 +1,59 @@
+@import "~colors.scss";
+.content-head {
+    display: flex;
+    justify-content: center;
+    font-size: 2.2em;
+    padding-top: 1em;
+    color: $darkText;
+}
+
+.content-block {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .content-item {
+        box-sizing: border-box;
+        padding: 20px;
+        flex: 1;
+        h3 {
+            a {
+                color: $darkText;
+            }
+            color: $darkText;
+            zoom: 1;
+        }
+    }
+}
+
+
+/*
+* -- TABLET (AND UP) --
+*/
+
+@media (min-width: 48em) {
+    .content-head {
+        margin: 2em 0 1em;
+        font-size: 2.8em;
+        padding-top: 2em;
+    }
+    .content-block {
+        flex-direction: row;
+        .content-item {
+            flex-basis: 50%;
+        }
+    }
+}
+
+
+/*
+* -- DESKTOP (AND UP) --
+*/
+
+@media (min-width: 78em) {
+    .content-block {
+        .content-item {
+            flex-basis: 25%;
+        }
+    }
+}

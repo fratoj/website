@@ -1,0 +1,54 @@
+@import "~colors.scss";
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15%;
+    .splash {
+        color: $lightText;
+        font-family: 'Source Sans Pro', sans-serif;
+        z-index: 1;
+        overflow: hidden;
+        h1 {
+            margin: 0;
+            color: $lightText;
+            line-height: 1.1em;
+            font-size: 3.5em;
+        }
+        .splash-subhead {
+            // margin-top: -4.6em;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            font-size: 0.60em;
+            color: rgba(255, 255, 255, 0.5);
+            opacity: 0.8;
+            code {
+                font-size: 1.2em;
+                color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+}
+
+
+/*
+* -- TABLET (AND UP) --
+*/
+
+@media (min-width: 48em) {
+    .splash-container {
+        margin-top: 5%;
+        flex-direction: row-reverse;
+        .splash {
+            h1 {
+                font-size: 4.8em;
+            }
+            .splash-subhead {
+                font-size: 0.8em;
+                code {
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+}
