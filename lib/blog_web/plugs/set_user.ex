@@ -1,6 +1,5 @@
 defmodule Blog.Plugs.SetUser do
   import Plug.Conn
-  import Phoenix.Controller
 
   alias Blog.Repo
   alias Blog.User
