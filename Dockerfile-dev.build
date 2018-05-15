@@ -1,0 +1,23 @@
+FROM bitwalker/alpine-elixir-phoenix:1.6.1
+
+ENV MIX_ENV dev
+
+# Add the files to the image
+ADD . . 
+
+# Cache Elixir deps
+RUN mix deps.get
+RUN mix deps.compile
+
+# Cache Node deps
+RUN npm i
+
+# Compile the angular app
+RUN ng build --prod
+
+# Compile app
+RUN mix compile
+
+# Generate release
+ENTRYPOINT ["mix"]
+CMD ["release", "--env=dev"]

@@ -18,6 +18,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
  * David Tengeri ([dtengeri](https://github.com/dtengeri)): [Using Angular 4 with Phoenix Framework 1.3](http://blog.dtengeri.com/2017/10/phoenix-angular.html)
  * Brian Emory: [Elixir Phoenix: Creating An App With Tests ](https://medium.brianemory.com/elixir-phoenix-creating-an-app-part-5-setting-a-current-user-43b90c7468d5)
  * Andrew Forward: [Continuous Testing with Elixir](https://medium.com/@a4word/continuous-testing-with-elixir-ddc1107c5cc0)
-
+ * Joe Sweeney ([jswny](https://github.com/jswny)) [A guide to building and running zero-dependency Phoenix (Elixir) deployments with Docker.](https://gist.github.com/jswny/83e03537830b0d997924e8f1965d88bc)
+ 
 ### Footnotes
 1. Read the section on [creating Google credentials in the developer console](https://medium.brianemory.com/elixir-phoenix-creating-an-app-part-4-using-google-%C3%BCberauth-e7d2ed1a3541) in the tutorial series by Brian Emory, and create the `.env` file as described.

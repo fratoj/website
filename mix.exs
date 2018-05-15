@@ -44,7 +44,8 @@ defmodule Blog.Mixfile do
       {:ueberauth, "~> 0.4"},
       {:ueberauth_google, "~> 0.5"},
       {:mix_test_watch, "~> 0.3", only: :dev, runtime: false},
-      {:ex_machina, "~> 2.0", only: :test}
+      {:ex_machina, "~> 2.0", only: :test},
+      {:distillery, "~> 1.5", runtime: false}
     ]
   end
 
