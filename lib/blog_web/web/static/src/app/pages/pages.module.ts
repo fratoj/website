@@ -1,6 +1,7 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { ClientsComponent } from './clients/clients.component';
 import { RouterModule } from '@angular/router';
@@ -16,6 +17,7 @@ import { Http, HttpModule } from '@angular/http';
     HttpModule,
     CommonModule,
     RouterModule,
+    FontAwesomeModule,
     ReactiveFormsModule
   ],
   providers: [FeedbackService, ApiService],
