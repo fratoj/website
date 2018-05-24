@@ -1,4 +1,8 @@
 @import "~colors.scss";
+:host {
+    width: 100%;
+}
+
 .content-head {
     font-size: 2.8em;
     color: $darkText;
@@ -11,6 +15,18 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    .content-edit {
+        padding-left: 1rem;
+        padding-right: 1.5rem;
+        flex: 1;
+        textarea {
+            width: 100%;
+            height: 25rem;
+        }
+        input[type=text] {
+            width: 100%;
+        }
+    }
     .content-item {
         padding-left: 10px;
         padding-right: 10px;

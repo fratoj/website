@@ -1,14 +1,42 @@
 <h2 class="content-head">{{ blogpost?.title}}</h2>
-<div class="content-block">
-    <div class="content-image">
-        <img alt="Our clients are devoted" src="js/assets/typewriter.jpg" />
-    </div>
+<div class="content-block" *ngIf="!editing">
     <div class="content-item">
-        <ul>
-            <li>
-                <h3>{{ blogpost?.slug }}</h3>
-                {{ blogpost?.text }}
-            </li>
-        </ul>
+        <h3>{{ blogpost?.slug }}</h3>
+        {{ blogpost?.text }}
+    </div>
+    <button (click)="editing = !editing">Edit</button>
+</div>
+<!-- editing -->
+<div class="content-block" *ngIf="editing">
+    <div class="content-edit">
+        <h3 *ngIf="new"><i>Edit this blog</i></h3>
+        <h3 *ngIf="!new"><i>Create your blog</i></h3>
+        <form [formGroup]="blogForm">
+            <div class="form-group">
+                <label class="center-block">Title:
+            <input type="text" class="form-control" formControlName="title">
+          </label><br>
+                <label class="center-block">Slug:
+            <input type="text" class="form-control" formControlName="slug">
+          </label><br>
+                <label class="center-block">Description:
+            <input type="text" class="form-control" formControlName="description">
+          </label><br>
+                <label class="center-block">Text:
+            <textarea formControlName="text" name="text"></textarea>
+          </label><br>
+                <div class="checkbox">
+                    <label class="center-block">
+                <input type="checkbox" formControlName="published">Published
+              </label>
+                </div>
+            </div>
+        </form>
+        <button (click)="editing = !editing" type="button">Cancel</button>
+        <button (click)=" save() ">Save</button>
+        <hr>
+        <p>Form value: {{ blogForm.value | json }}</p>
+        <p>Form status: {{ blogForm.status | json }}</p>
+        <hr>
     </div>
 </div>

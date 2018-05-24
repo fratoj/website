@@ -45,6 +45,11 @@ const appRoutes: Routes = [
     data: { title: 'Contact' }
   },
   {
+    path: 'blog/new',
+    component: PostDetailComponent,
+    data: { new: true }
+  },
+  {
     path: 'blog/:id',
     component: PostDetailComponent
   },

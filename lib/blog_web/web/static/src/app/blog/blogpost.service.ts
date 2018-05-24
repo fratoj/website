@@ -33,6 +33,15 @@ export class BlogpostService {
       }).catch(this.handleError);
   }
 
+  public saveBlogpost(blogpost: Blogpost): Observable<Blogpost> {
+    return this.http
+      .post(API_URL + '/blogposts/', blogpost)
+      .map(response => {
+        const retval = response.json().data;
+        return new Blogpost(retval);
+      }).catch(this.handleError);
+  }
+
   private handleError(error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
